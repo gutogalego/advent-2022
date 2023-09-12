@@ -5,6 +5,7 @@ use std::io;
 fn main() {
     //game();
     shadow();
+    tupll();
 }
 
 fn game() {
@@ -47,4 +48,60 @@ fn shadow() {
         println!("Inner {x}")
     }
     println!("Outer {x}")
+}
+
+fn tupll() {
+    let y = (0, 1.4, 2, 3);
+    let x = y.3;
+
+    let z = [1, 2, 3, 4];
+
+    let t = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+
+    const MONTHS: [&str; 12] = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+
+    let a = [3; 5];
+
+    let mut index = String::new();
+
+    let c = {
+        let c = 3;
+        c * c
+    };
+
+    println!("{}", c);
+
+    io::stdin().read_line(&mut index).expect("F");
+
+    let index: usize = index.trim().parse().expect("L");
+
+    //let b = a[index];
+
+    println!("{:?}", a)
 }
