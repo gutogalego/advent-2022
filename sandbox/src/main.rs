@@ -6,6 +6,7 @@ fn main() {
     //game();
     shadow();
     tupll();
+    nex();
 }
 
 fn game() {
@@ -104,4 +105,18 @@ fn tupll() {
     //let b = a[index];
 
     println!("{:?}", a)
+}
+
+fn nex() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 3;
+        }
+    };
+
+    println!("{counter}")
 }
