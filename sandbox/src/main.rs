@@ -3,7 +3,8 @@ use std::cmp::Ordering;
 use std::io;
 
 fn main() {
-    game();
+    //game();
+    shadow();
 }
 
 fn game() {
@@ -17,7 +18,6 @@ fn game() {
         let mut guess = String::new();
 
         io::stdin().read_line(&mut guess).expect("F");
-
 
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
@@ -35,4 +35,16 @@ fn game() {
             }
         }
     }
+}
+
+fn shadow() {
+    let x = 5;
+
+    let x = x * x;
+
+    {
+        let x = x * 2;
+        println!("Inner {x}")
+    }
+    println!("Outer {x}")
 }
