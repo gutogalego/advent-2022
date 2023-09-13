@@ -8,7 +8,8 @@ fn main() {
     //tupll();
     //nex();
     //fff();
-    fl();
+    //fl();
+    u();
 }
 
 fn game() {
@@ -218,10 +219,7 @@ fn fl() {
     let hello = first_word(&s);
     let world = &s[6..11];
 
-    
     println!("{hello}");
-
-
 }
 
 fn first_word(s: &String) -> &str {
@@ -235,3 +233,25 @@ fn first_word(s: &String) -> &str {
 
     &s[..]
 }
+
+struct User {
+    active: bool,
+    name: String,
+}
+
+fn u (){
+    let mut user = User{
+        active: true,
+        name: String::from("Augusto")
+    };
+
+    user.name = String::from("B");
+
+    let user2 = User {
+        active:false,
+        ..user
+    };
+
+    println!("{}", user2.name)
+}
+
