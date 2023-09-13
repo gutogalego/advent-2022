@@ -7,7 +7,8 @@ fn main() {
     //shadow();
     //tupll();
     //nex();
-    fff();
+    //fff();
+    fl();
 }
 
 fn game() {
@@ -188,10 +189,8 @@ fn fff() {
     let r1 = &mut y;
 
     r1.push_str("string");
+
     println!("{y}");
-
-    
-
 }
 
 fn takes_ownership(some_string: String) -> String {
@@ -199,10 +198,40 @@ fn takes_ownership(some_string: String) -> String {
     return some_string;
 }
 
-fn makes_copy(some_int: i32){
+fn makes_copy(some_int: i32) {
     println!("{some_int}");
 }
 
 fn change(st: &mut String) {
     st.push_str("a");
+}
+
+// fn dangle() -> &String {
+//     let s = String::from("hello");
+
+//     &s
+// }
+
+fn fl() {
+    let mut s = String::from("hello world");
+
+    let hello = first_word(&s);
+    let world = &s[6..11];
+
+    
+    println!("{hello}");
+
+
+}
+
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
 }
