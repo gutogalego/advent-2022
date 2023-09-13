@@ -131,8 +131,6 @@ fn solve2() {
             }
         }
 
-
-
         points += points_mapper.get(result).expect("") + points_mapper.get(&hand_played).expect("");
     }
     println!("{}", points);

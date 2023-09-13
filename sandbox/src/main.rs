@@ -242,7 +242,7 @@ struct User {
 fn u (){
     let mut user = User{
         active: true,
-        name: String::from("Augusto")
+        name: String::from("Augusto"),
     };
 
     user.name = String::from("B");
@@ -252,6 +252,23 @@ fn u (){
         ..user
     };
 
-    println!("{}", user2.name)
+    println!("{}", user2.name);
+
+
+    let user = User{
+        active: true,
+        name: String::from("Augusto"),
+    };
+
+
+    let user2 = User {
+        active:false,
+        ..user
+    };
+
+    //println!("{}", user.name); SHADOW
+
 }
 
+struct Color (i32, i32, i32);
+struct AlwaysEqual;

@@ -46,7 +46,6 @@ fn solve2() {
         group.push(&line);
         if group.len() == 3 {
             let sets: Vec<Vec<char>> = group.iter().map(|string| string.chars().collect()).collect();
-
             
             print!("{:?}",sets)
             //let badge = sets.iter().reduce(|acc, set| acc.intersection(set));
