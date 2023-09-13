@@ -6,7 +6,8 @@ fn main() {
     //game();
     //shadow();
     //tupll();
-    nex();
+    //nex();
+    fff();
 }
 
 fn game() {
@@ -129,18 +130,17 @@ fn nex() {
         loop {
             println!("remaining = {remaining}");
 
-            if remaining == 9{
+            if remaining == 9 {
                 break;
             }
             if count == 2 {
                 break 'up;
             }
-            remaining -=1;
+            remaining -= 1;
         }
         count += 1;
     }
     println!("End count= {count}");
-
 
     let mut number = 3;
 
@@ -152,14 +152,57 @@ fn nex() {
 
     println!("LIFTOFF!!!");
 
-
     let a = [10, 20, 30, 40, 50];
 
     for element in a {
         println!("the value is: {element}");
     }
 
-    for nu in (1..4).rev(){
+    for nu in (1..4).rev() {
         println!("{nu}!");
     }
+}
+
+fn fff() {
+    let mut s = String::from("hello");
+    s.push_str(" world");
+    println!("{s}");
+
+    let s1 = s;
+    let s2 = s1.clone();
+
+    println!("{}", s1);
+
+    let s3 = takes_ownership(s2);
+
+    println!("{s3}");
+
+    let x = 5;
+    makes_copy(x);
+
+    let mut y = String::from("value");
+    change(&mut y);
+
+    println!("{y}");
+
+    let r1 = &mut y;
+
+    r1.push_str("string");
+    println!("{y}");
+
+    
+
+}
+
+fn takes_ownership(some_string: String) -> String {
+    println!("{some_string}");
+    return some_string;
+}
+
+fn makes_copy(some_int: i32){
+    println!("{some_int}");
+}
+
+fn change(st: &mut String) {
+    st.push_str("a");
 }
